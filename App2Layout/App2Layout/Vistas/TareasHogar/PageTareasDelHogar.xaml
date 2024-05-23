@@ -3,8 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App2Layout.Vistas.TareasHogar.PageTareasDelHogar">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Editar Tareas del hogar" Clicked="ToolbarItem_Clicked" />
-        <ToolbarItem Text="Agregar Tareas del hogar" Clicked="ToolbarItem_Clicked_1" />
+        <ToolbarItem Text="Editar" Clicked="ToolbarItem_Clicked" />
+        <ToolbarItem Text="Agregar" Clicked="ToolbarItem_Clicked_1" />
+        <ToolbarItem Text="Actualizar" Clicked="ToolbarItem_Clicked_2" />
     </ContentPage.ToolbarItems>
 
     <StackLayout BackgroundColor="Beige">
@@ -35,7 +36,6 @@
                             <Label Text="{Binding EstaTerminada}" HorizontalOptions="StartAndExpand" TextColor="Black"/>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="End" >
                                 <Button Text="Editar" Clicked="Button_Clicked" />
-                                <Button Text="Eliminar" Clicked="Button_Clicked_1" />
                             </StackLayout>
                         </StackLayout>
                     </ViewCell>

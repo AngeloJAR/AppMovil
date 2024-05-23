@@ -53,23 +53,6 @@ namespace App2Layout.Vistas.TareasHogar
             }
         }
 
-
-        private async void Button_Clicked_1(object sender, EventArgs e)
-        {
-            var buttton = sender as Button;
-            var tarea = buttton?.BindingContext as Tarea;
-            if (tarea != null)
-            {
-                bool confirm = await DisplayAlert("Confirmar", "¿Esta seguro de que desea eliminar este item?", "Si", "NO");
-                if (confirm)
-                {
-                    await App.db_Conexion.UpdateItemAsync(tarea);
-                    await LoadTareasDelHogarAsync();
-                }
-            }
-
-        }
-
         private async void ToolbarItem_Clicked(object sender, EventArgs e)
         {
             if (TareasDelHogarListView.SelectedItem != null)
@@ -86,6 +69,19 @@ namespace App2Layout.Vistas.TareasHogar
         private async void ToolbarItem_Clicked_1(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new AñadirTareaHogar());
+        }
+
+        private async void ToolbarItem_Clicked_2(object sender, EventArgs e)
+        {
+            if (TareasDelHogarListView.SelectedItem != null)
+            {
+                var tareaSeleccionada = TareasDelHogarListView.SelectedItem as TareasDelHogar;
+                await Navigation.PushAsync(new ActualizarTareasHogar(tareaSeleccionada));
+            }
+            else
+            {
+                await DisplayAlert("Error", "Selecciona una tarea para actualizar.", "Aceptar");
+            }
         }
     }
 }

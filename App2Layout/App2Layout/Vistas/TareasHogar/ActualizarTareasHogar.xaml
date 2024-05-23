@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2Layout.Vistas.TareasHogar.ActualizarTareasHogar">
+    <ScrollView>
+        <Frame BackgroundColor="LightGray" CornerRadius="10" Padding="10">
+            <StackLayout Padding="10">
+                <Label Text="Editar Tarea del Hogar" FontSize="Medium" FontAttributes="Bold" />
+
+                <Label Text="Nombre" />
+                <Entry x:Name="nombreEntry" IsEnabled="{Binding EstaTerminada, Converter={StaticResource InverseBoolConverter}}" />
+
+                <Label Text="Descripción" />
+                <Entry x:Name="descripcionEntry" IsEnabled="{Binding EstaTerminada, Converter={StaticResource InverseBoolConverter}}" />
+
+                <Label Text="Hora de Inicio" />
+                <TimePicker x:Name="horaInicioTimePicker" IsEnabled="{Binding EstaTerminada, Converter={StaticResource InverseBoolConverter}}" />
+
+                <Label Text="Hora de Finalización" />
+                <TimePicker x:Name="horaFinalizacionTimePicker" IsEnabled="{Binding EstaTerminada, Converter={StaticResource InverseBoolConverter}}" />
+
+                <Label Text="¿Está Terminada?" />
+                <Switch x:Name="estaTerminadaSwitch" IsEnabled="False" />
+
+                <Button Text="Guardar" Clicked="Button_Clicked" IsEnabled="{Binding EstaTerminada, Converter={StaticResource InverseBoolConverter}}" />
+            </StackLayout>
+        </Frame>
+    </ScrollView>
+</ContentPage>
