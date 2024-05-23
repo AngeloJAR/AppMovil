@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:CI="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             x:Class="App2Layout.Layaut">
+
+    <StackLayout BackgroundColor="Wheat">
+
+
+
+        <CI:CircleImage 
+            Margin="10"
+            WidthRequest="300" 
+            HeightRequest="300"
+            Aspect="AspectFill" 
+            BorderThickness="5"
+            BorderColor="Black"
+            Source="https://i.pinimg.com/564x/04/92/7a/04927aea4de78d4572e5ffdbb26255b9.jpg">
+        </CI:CircleImage>
+        <Label 
+            Text="Usuario" 
+            HorizontalOptions="Center" 
+            FontSize="25" 
+            TextColor="Black"
+            FontAttributes="Bold">
+        </Label>
+        <Entry x:Name="usuario" Text="Ingrese su usuario" HorizontalOptions="Center"/>
+        <Label 
+            Text="Contraseña" 
+            HorizontalOptions="Center" 
+            FontSize="25" 
+            TextColor="Black"
+            FontAttributes="Bold">
+        </Label>
+        <Entry x:Name="contraseña" Text="Ingrese su contraseña" HorizontalOptions="Center"/>
+        
+    </StackLayout>
+
+</ContentPage>

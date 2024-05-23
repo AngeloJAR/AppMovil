@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2Layout.Vistas.homepage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Formulario" Clicked="ToolbarItem_Clicked" />
+        <ToolbarItem Text="Tareas del Hogar" Clicked="ToolbarItem_Clicked_1" />
+    </ContentPage.ToolbarItems>
+
+    <StackLayout BackgroundColor="Beige">
+        <Label Text="Pagina de inicio" TextColor="Black" 
+               FontAttributes="Bold" FontSize="10"
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="CenterAndExpand" />
+
+        <ListView x:Name="tareasListView" HasUnevenRows="true">
+            <ListView.Header>
+                <StackLayout Orientation="Horizontal" Padding="5" BackgroundColor="Gray">
+                    <Label Text="Cedula" HorizontalOptions="StartAndExpand" />
+                    <Label Text="Nombre" HorizontalOptions="StartAndExpand" />
+                    <Label Text="Apellido" HorizontalOptions="StartAndExpand" />
+                    <Label Text="Acciones" HorizontalOptions="End" />
+                </StackLayout>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Label Text="{Binding IdCedula}" Grid.Column="0" TextColor="Black" VerticalOptions="Center" />
+                            <Label Text="{Binding Nombre}" Grid.Column="1" TextColor="Black" VerticalOptions="Center" />
+                            <Label Text="{Binding Apellido}" Grid.Column="2" TextColor="Black" VerticalOptions="Center" />
+                            <StackLayout Orientation="Horizontal" Grid.Column="3" HorizontalOptions="End" VerticalOptions="Center">
+                                <Button Text="Editar" Clicked="Button_Clicked" />
+                                <Button Text="Eliminar" Clicked="Button_Clicked_1" />
+                            </StackLayout>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+
+            </ListView.ItemTemplate>
+        </ListView>
+        
+    </StackLayout>
+</ContentPage>

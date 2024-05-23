@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2Layout.Vistas.EditPage">
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <Label Text="Editar Tarea" FontSize="Medium" FontAttributes="Bold" />
+
+            <Label Text="Cedula" />
+            <Entry x:Name="cedulaEntry" />
+
+            <Label Text="Nombre" />
+            <Entry x:Name="nombreEntry" />
+
+            <Label Text="Apellido" />
+            <Entry x:Name="apellidoEntry" />
+
+            <Button Text="Guardar" Clicked="Button_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

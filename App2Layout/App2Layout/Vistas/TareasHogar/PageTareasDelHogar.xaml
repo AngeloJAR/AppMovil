@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2Layout.Vistas.TareasHogar.PageTareasDelHogar">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Editar Tareas del hogar" Clicked="ToolbarItem_Clicked" />
+        <ToolbarItem Text="Agregar Tareas del hogar" Clicked="ToolbarItem_Clicked_1" />
+    </ContentPage.ToolbarItems>
+
+    <StackLayout BackgroundColor="Beige">
+        <Label Text="Pagina de Tareas del Hogar" TextColor="Black" 
+           FontAttributes="Bold" FontSize="10"
+           VerticalOptions="CenterAndExpand" 
+           HorizontalOptions="CenterAndExpand" />
+
+        <ListView x:Name="TareasDelHogarListView" HasUnevenRows="true">
+            <ListView.Header>
+                <StackLayout Orientation="Horizontal" Padding="10" BackgroundColor="Gray">
+                    <Label Text="Nombre" HorizontalOptions="StartAndExpand" />
+                    <Label Text="Descripcion" HorizontalOptions="StartAndExpand" />
+                    <Label Text="HoraInicio" HorizontalOptions="StartAndExpand" />
+                    <Label Text="HoraFinalizacion" HorizontalOptions="StartAndExpand" />
+                    <Label Text="EstaTerminada" HorizontalOptions="StartAndExpand" />
+                    <Label Text="Acciones" HorizontalOptions="End" />
+                </StackLayout>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="1">
+                            <Label Text="{Binding Nombre}" HorizontalOptions="StartAndExpand" TextColor="Black" />
+                            <Label Text="{Binding Descripcion}" HorizontalOptions="StartAndExpand" TextColor="Black"/>
+                            <Label Text="{Binding HoraInicio}" HorizontalOptions="StartAndExpand" TextColor="Black"/>
+                            <Label Text="{Binding HoraFinalizacion}" HorizontalOptions="StartAndExpand" TextColor="Black"/>
+                            <Label Text="{Binding EstaTerminada}" HorizontalOptions="StartAndExpand" TextColor="Black"/>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="End" >
+                                <Button Text="Editar" Clicked="Button_Clicked" />
+                                <Button Text="Eliminar" Clicked="Button_Clicked_1" />
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

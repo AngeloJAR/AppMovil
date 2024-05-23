@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2Layout.Vistas.PageContenido">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Guardar" Clicked="ToolbarItem_Clicked"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label 
+                Text="Registro de usuario"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Label 
+                Text="Cedula" 
+                TextColor="BlanchedAlmond" 
+                FontSize="12"/>
+            <Entry x:Name="cedula">
+            
+            </Entry>
+            
+            <Label 
+                Text="NOMBRE" 
+                TextColor="BlanchedAlmond" 
+                FontSize="12"/>
+            <Entry 
+                x:Name="nombre">
+                
+            </Entry>
+            <Label 
+                Text="Apellido" 
+                TextColor="BlanchedAlmond" 
+                FontSize="12"/>
+            <Editor 
+                x:Name="apellido" 
+                HeightRequest="100">
+                
+            </Editor>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2Layout.Vistas.TareasHogar.AñadirTareaHogar">
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <Label Text="Agregar Tarea del Hogar" FontSize="Medium" FontAttributes="Bold" />
+
+            <Label Text="Nombre" />
+            <Entry x:Name="nombreEntry" />
+
+            <Label Text="Descripción" />
+            <Entry x:Name="descripcionEntry" />
+
+            <Label Text="Hora de Inicio" />
+            <TimePicker x:Name="horaInicioTimePicker" />
+
+            <Label Text="Hora de Finalización" />
+            <TimePicker x:Name="horaFinalizacionTimePicker" />
+
+            <Label Text="¿Está Terminada?" />
+            <Switch x:Name="estaTerminadaSwitch"  />
+
+            <Button Text="Guardar" Clicked="Button_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
